@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Nova Premium Peptides – Precision. Purity. Performance.</title>
+ <meta name="description" content="Nova Premium Peptides offers premium-grade compounds including BPC-157, TB-500, NAD+, Retatrutide and more. Premium quality peptides trusted across Canada." />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <!-- ===== NAVBAR ===== -->
+ <nav id="navbar" class="navbar">
+ <div class="nav-container">
+ <a href="#home" class="nav-logo" onclick="showPage('home')">
+ <div class="logo-icon">
+ <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+ <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+ <polygon points="16,6 26,12 26,20 16,26 6,20 6,12" fill="#0F172A"/>
+ <path d="M10 12 L16 8 L22 12 L22 20 L16 24 L10 20 Z" fill="#2563EB" opacity="0.3"/>
+ <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
+ </svg>
+ </div>
+ <div class="logo-text">
+ <span class="logo-nova">NOVA</span>
+ <span class="logo-sub">PREMIUM PEPTIDES</span>
+ </div>
+ </a>
+
+ <div class="nav-links" id="navLinks">
+ <a href="#" class="nav-link active" id="nav-home" onclick="showPage('home'); setActive(this)">Home</a>
+ <a href="#" class="nav-link" id="nav-shop" onclick="showPage('shop'); setActive(this)">Shop</a>
+ <a href="#" class="nav-link" id="nav-bundles" onclick="showPage('bundles'); setActive(this)">Bundles</a>
+ <a href="#" class="nav-link" id="nav-about" onclick="showPage('about'); setActive(this)">About</a>
+ <a href="#" class="nav-link" id="nav-faq" onclick="showPage('faq'); setActive(this)">FAQ</a>
+ <a href="#" class="nav-link" id="nav-shipping" onclick="showPage('shipping'); setActive(this)">Shipping</a>
+ <a href="#" class="nav-link" id="nav-contact" onclick="showPage('contact'); setActive(this)">Contact</a>
+ <a href="#" class="nav-cta" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">Order Now</a>
+ </div>
+
+ <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+ </nav>
+
+ <!-- ===== ORDER MODAL ===== -->
+ <div id="orderModal" class="modal-overlay" onclick="closeModal(event)">
+ <div class="modal-box">
+ <button class="modal-close" onclick="document.getElementById('orderModal').classList.remove('active'); document.body.style.overflow=''">&times;</button>
+ <h2 class="modal-title">Place Your Order</h2>
+ <p class="modal-subtitle">Item: <strong><span id="modalProduct"></span></strong></p>
+ <p class="modal-price">Price: <span id="modalPrice"></span> <span class="modal-cad">CAD</span></p>
+ <div class="modal-divider"></div>
+ <p class="modal-payment-title">Accepted Payment Methods</p>
+ <div class="modal-payment-options">
+ <div class="payment-opt">
+ <span class="payment-icon">🏦</span>
+ <div>
+ <p class="payment-name">E-Transfer (Canada)</p>
+ <p class="payment-desc">Send to our email after placing order confirmation</p>
+ </div>
+ </div>
+ <div class="payment-opt">
+ <span class="payment-icon">₿</span>
+ <div>
+ <p class="payment-name">Cryptocurrency</p>
+ <p class="payment-desc">BTC, ETH, USDT accepted — wallet address sent via email</p>
+ </div>
+ </div>
+ </div>
+ <form id="orderForm" onsubmit="submitOrder(event)">
+ <input type="text" placeholder="Your Full Name" required class="modal-input" />
+ <input type="email" placeholder="Your Email Address" required class="modal-input" />
+ <input type="text" placeholder="Full Shipping Address (Canada only)" required class="modal-input" />
+ <select class="modal-input" required>
+ <option value="">Select Payment Method</option>
+ <option value="etransfer">E-Transfer (Canada)</option>
+ <option value="crypto">Cryptocurrency (BTC/ETH/USDT)</option>
+ </select>
+ <textarea placeholder="Additional notes — e.g. quantity, special instructions (optional)" class="modal-input modal-textarea" rows="3"></textarea>
+ <button type="submit" class="btn-primary modal-submit">Confirm Order</button>
+ </form>
+ </div>
+ </div>
+
+ <!-- ================== HOME PAGE ================== -->
+ <div id="page-home" class="page active">
+
+ <!-- Hero -->
+ <section class="hero" id="home">
+ <div class="hero-particles" id="heroParticles"></div>
+ <div class="hero-molecular"></div>
+ <div class="hero-content">
+ <p class="hero-eyebrow">Premium Peptides · Canada</p>
+ <h1 class="hero-title">Precision.<br>Purity.<br><span class="glow-text">Performance.</span></h1>
+ <p class="hero-desc">Premium premium-grade peptides engineered for exact results. Trusted by customers across North America. Lyophilized for maximum stability.</p>
+ <div class="hero-btns">
+ <a href="#" class="btn-primary" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))" id="hero-browse-btn">Browse Compounds</a>
+ <a href="#" class="btn-secondary" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))" id="hero-bundles-btn">View Bundles</a>
+ </div>
+ <div class="hero-badges">
+ <span class="badge">✓ Premium Grade</span>
+ <span class="badge">✓ High Purity</span>
+ <span class="badge">✓ Lyophilized Powder</span>
+ <span class="badge">✓ Discreet Shipping</span>
+ </div>
+ </div>
+ <div class="hero-visual">
+ <div class="vial-showcase">
+ <img src="final_vial_5.png" alt="Nova Premium Peptide Vial" class="hero-vial" />
+ <div class="vial-glow"></div>
+ <div class="vial-label-tag">
+ <span class="vl-title">IGF-1 LR3</span>
+ <span class="vl-dose">1mg · Premium Grade</span>
+ <span class="vl-purity">Lyophilized Powder</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Stats Bar -->
+ <section class="stats-bar">
+ <div class="container">
+ <div class="stats-row">
+ <div class="stat-box">
+ <span class="stat-num" data-target="12">0</span><span class="stat-unit">+</span>
+ <span class="stat-lbl">Compounds Available</span>
+ </div>
+ <div class="stat-divider"></div>
+ <div class="stat-box">
+ <span class="stat-num" data-target="99">0</span><span class="stat-unit">%</span>
+ <span class="stat-lbl">Purity Standard</span>
+ </div>
+ <div class="stat-divider"></div>
+ <div class="stat-box">
+ <span class="stat-num" data-target="4">0</span><span class="stat-unit"></span>
+ <span class="stat-lbl">Research Stacks</span>
+ </div>
+ <div class="stat-divider"></div>
+ <div class="stat-box">
+ <span class="stat-num" data-target="48">0</span><span class="stat-unit">h</span>
+ <span class="stat-lbl">Order Processing</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- What Are Peptides -->
+ <section class="section info-section">
+ <div class="container">
+ <div class="info-split">
+ <div class="info-split-content">
+ <p class="section-eyebrow left-align">Science</p>
+ <h2 class="section-title left-align">What Are <span class="glow-text">Peptides?</span></h2>
+ <p class="info-text">Peptides are short chains of amino acids — the building blocks of proteins — that play critical roles in virtually every biological process. Unlike large proteins, their compact structure allows them to interact with specific receptors with high precision.</p>
+ <p class="info-text">In research settings, synthetic peptides are used to study signaling pathways, tissue repair mechanisms, metabolic regulation, and cellular aging. Each compound in our catalog has been selected for its distinct research profile and compound stability.</p>
+ <div class="info-tags">
+ <span class="info-tag">🧬 Amino Acid Chains</span>
+ <span class="info-tag">⚗️ Lyophilized Powder</span>
+ <span class="info-tag">🔬 Receptor Selective</span>
+ <span class="info-tag">🧪 Research Applications</span>
+ </div>
+ </div>
+ <div class="info-split-visual">
+ <div class="science-card">
+ <div class="science-icon">🧬</div>
+ <h4>Lyophilization Process</h4>
+ <p>Freeze-drying removes moisture under vacuum, preserving the peptide's biological structure and extending shelf life significantly compared to liquid solutions.</p>
+ </div>
+ <div class="science-card">
+ <div class="science-icon">🔬</div>
+ <h4>Receptor Specificity</h4>
+ <p>Each peptide is engineered to bind to specific receptors, enabling targeted research without broad off-target interactions — critical for reproducible results.</p>
+ </div>
+ <div class="science-card">
+ <div class="science-icon">⚗️</div>
+ <h4>Reconstitution Ready</h4>
+ <p>Add BAC Water (bacteriostatic water) to reconstitute. Once dissolved, store at 2–8°C and use within 30 days for optimal compound integrity.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Featured Products -->
+ <section class="section featured-section">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Our Products</p>
+ <h2 class="section-title">Featured <span class="glow-text">Compounds</span></h2>
+ <p class="section-desc">Premium premium-grade peptides crafted with precision and consistency</p>
+ </div>
+ <div class="products-grid" id="featuredGrid"></div>
+ <div class="section-cta">
+ <a href="#" class="btn-primary" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))" id="view-all-btn">View All 12 Compounds →</a>
+ </div>
+ </div>
+ </section>
+
+ <!-- How It Works -->
+ <section class="section how-section">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Process</p>
+ <h2 class="section-title">How It <span class="glow-text">Works</span></h2>
+ <p class="section-desc">Ordering from Nova is simple, secure, and discreet</p>
+ </div>
+ <div class="steps-grid">
+ <div class="step-card">
+ <div class="step-number">01</div>
+ <div class="step-icon">🛒</div>
+ <h3 class="step-title">Browse & Select</h3>
+ <p class="step-desc">Browse our full catalog of 12 premium peptide compounds. Filter by category — Recovery, Performance, Wellness, or Metabolic.</p>
+ </div>
+ <div class="step-arrow">→</div>
+ <div class="step-card">
+ <div class="step-number">02</div>
+ <div class="step-icon">📋</div>
+ <h3 class="step-title">Place Your Order</h3>
+ <p class="step-desc">Fill out the order form with your name, email, and shipping address. Choose your payment method — E-Transfer or Cryptocurrency. We'll send payment instructions to your email.</p>
+ </div>
+ <div class="step-arrow">→</div>
+ <div class="step-card">
+ <div class="step-number">03</div>
+ <div class="step-icon">💳</div>
+ <h3 class="step-title">Complete Payment</h3>
+ <p class="step-desc">Send your E-Transfer or crypto payment to the details provided. Your order is confirmed once payment is verified — typically within a few hours on business days.</p>
+ </div>
+ <div class="step-arrow">→</div>
+ <div class="step-card">
+ <div class="step-number">04</div>
+ <div class="step-icon">📦</div>
+ <h3 class="step-title">Fast Delivery</h3>
+ <p class="step-desc">Orders are processed within 1–2 business days. Shipped discreetly across Canada via tracked delivery (3–7 business days). No product names on the outer packaging.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Bundle Teaser -->
+ <section class="section bundles-teaser">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Save More</p>
+ <h2 class="section-title">Research <span class="glow-text">Stacks</span></h2>
+ <p class="section-desc">Curated compound combinations for targeted research outcomes — bundled for value</p>
+ </div>
+ <div class="bundles-grid" id="homeBundlesGrid"></div>
+ <div class="section-cta">
+ <a href="#" class="btn-primary" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))" id="all-bundles-btn">View All Bundles →</a>
+ </div>
+ </div>
+ </section>
+
+ <!-- Why Choose Us -->
+ <section class="section why-section">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Why Nova</p>
+ <h2 class="section-title">Built for <span class="glow-text">Excellence</span></h2>
+ <p class="section-desc">We don't just sell peptides — we deliver research confidence</p>
+ </div>
+ <div class="why-grid">
+ <div class="why-card">
+ <div class="why-icon">🔬</div>
+ <h3 class="why-title">Premium-Grade Purity</h3>
+ <p class="why-desc">Every compound meets stringent purity requirements. We source only from verified, reputable manufacturers who share our commitment to compound integrity.</p>
+ <div class="why-detail">99%+ Purity Standard</div>
+ </div>
+ <div class="why-card">
+ <div class="why-icon">⚗️</div>
+ <h3 class="why-title">Batch Consistency</h3>
+ <p class="why-desc">Batch-to-batch consistency is non-negotiable. Each production run is verified to ensure your research produces reliable, reproducible results every time.</p>
+ <div class="why-detail">Tested Every Batch</div>
+ </div>
+ <div class="why-card">
+ <div class="why-icon">🚀</div>
+ <h3 class="why-title">Fast & Discreet Shipping</h3>
+ <p class="why-desc">Orders processed within 48 hours. All packages are shipped with plain, discreet outer packaging — no product names, no branding on the label.</p>
+ <div class="why-detail">3–7 Business Days · Canada</div>
+ </div>
+ <div class="why-card">
+ <div class="why-icon">🛡️</div>
+ <h3 class="why-title">Privacy First</h3>
+ <p class="why-desc">Your personal data and order details are handled with complete confidentiality. We never share customer information with third parties.</p>
+ <div class="why-detail">Full Customer Privacy</div>
+ </div>
+ <div class="why-card">
+ <div class="why-icon">💎</div>
+ <h3 class="why-title">Premium Packaging</h3>
+ <p class="why-desc">All vials are individually sealed, clearly labeled, and packaged to withstand transit. Your compounds arrive exactly as dispatched — intact and stable.</p>
+ <div class="why-detail">Lab-Grade Vials</div>
+ </div>
+ <div class="why-card">
+ <div class="why-icon">🤝</div>
+ <h3 class="why-title">Responsive Support</h3>
+ <p class="why-desc">Questions about your order, reconstitution, or storage? Our team responds within 24 hours. We're here to support your research every step of the way.</p>
+ <div class="why-detail">24h Response Time</div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Category Overview -->
+ <section class="section categories-section">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Research Categories</p>
+ <h2 class="section-title">Find Your <span class="glow-text">Compound</span></h2>
+ <p class="section-desc">Our catalog is organized into four research categories</p>
+ </div>
+ <div class="cat-grid">
+ <div class="cat-card" onclick="showPage('shop'); setActive(document.getElementById('nav-shop')); setTimeout(()=>filterProducts('Recovery'),100)">
+ <div class="cat-icon">💪</div>
+ <h3 class="cat-title">Recovery</h3>
+ <p class="cat-desc">BPC-157, TB-500 — studied for tissue repair, muscle recovery, and injury support mechanisms.</p>
+ <span class="cat-count">2 Compounds</span>
+ </div>
+ <div class="cat-card" onclick="showPage('shop'); setActive(document.getElementById('nav-shop')); setTimeout(()=>filterProducts('Performance'),100)">
+ <div class="cat-icon">⚡</div>
+ <h3 class="cat-title">Performance</h3>
+ <p class="cat-desc">CJC+IPA, CJC+DAC, IGF-1 LR3 — researched for GH support, body composition, and output.</p>
+ <span class="cat-count">3 Compounds</span>
+ </div>
+ <div class="cat-card" onclick="showPage('shop'); setActive(document.getElementById('nav-shop')); setTimeout(()=>filterProducts('Wellness'),100)">
+ <div class="cat-icon">🌿</div>
+ <h3 class="cat-title">Wellness</h3>
+ <p class="cat-desc">GHK-Cu, NAD+, MOTS-C, MT2 — studied for longevity, energy production, and cellular health.</p>
+ <span class="cat-count">4 Compounds</span>
+ </div>
+ <div class="cat-card" onclick="showPage('shop'); setActive(document.getElementById('nav-shop')); setTimeout(()=>filterProducts('Metabolic'),100)">
+ <div class="cat-icon">🔥</div>
+ <h3 class="cat-title">Metabolic</h3>
+ <p class="cat-desc">Retatrutide, Tesamorelin — triple receptor agonists and GHRH analogues for metabolic research.</p>
+ <span class="cat-count">2 Compounds</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Reviews -->
+ <section class="section reviews-section">
+ <div class="container">
+ <div class="section-header">
+ <p class="section-eyebrow">Testimonials</p>
+ <h2 class="section-title">What Researchers <span class="glow-text">Say</span></h2>
+ <p class="section-desc">Trusted by customers across Canada and North America</p>
+ </div>
+ <div class="reviews-grid">
+ <div class="review-card">
+ <div class="review-stars">★★★★★</div>
+ <p class="review-text">"Exceptional quality compounds. The BPC-157 I ordered showed consistent results in my tissue recovery research. Purity was noticeably higher than my previous source. Will definitely reorder."</p>
+ <div class="review-author">
+ <div class="review-avatar">RT</div>
+ <div>
+ <p class="review-name">Dr. R. Thompson</p>
+ <p class="review-role">Bioscience Professional, Ontario</p>
+ </div>
+ </div>
+ </div>
+ <div class="review-card">
+ <div class="review-stars">★★★★★</div>
+ <p class="review-text">"Fast, discreet shipping and the highest compound purity I've tested. I ordered the Performance Stack and the CJC+IPA results were exactly in line with published research data. Nova is my go-to."</p>
+ <div class="review-author">
+ <div class="review-avatar">MK</div>
+ <div>
+ <p class="review-name">M. Kowalski</p>
+ <p class="review-role">Independent Researcher, BC</p>
+ </div>
+ </div>
+ </div>
+ <div class="review-card">
+ <div class="review-stars">★★★★★</div>
+ <p class="review-text">"The Performance Stack bundle saved me money while giving me everything I needed. Outstanding value and product quality. The packaging was professional and arrived quickly."</p>
+ <div class="review-author">
+ <div class="review-avatar">JL</div>
+ <div>
+ <p class="review-name">J. Laurent</p>
+ <p class="review-role">Sports Researcher, Quebec</p>
+ </div>
+ </div>
+ </div>
+ <div class="review-card">
+ <div class="review-stars">★★★★★</div>
+ <p class="review-text">"I've been using Nova's NAD+ for my cellular aging research — the quality is consistent batch to batch. The ordering process is smooth and crypto payment worked seamlessly."</p>
+ <div class="review-author">
+ <div class="review-avatar">SB</div>
+ <div>
+ <p class="review-name">S. Beaumont</p>
+ <p class="review-role">Longevity Researcher, Alberta</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- CTA Banner -->
+ <section class="cta-banner-section">
+ <div class="container">
+ <div class="cta-banner">
+ <div class="cta-banner-content">
+ <h2 class="cta-banner-title">Ready to Start Your Research?</h2>
+ <p class="cta-banner-desc">Browse our full catalog of 12 premium compounds and 4 curated stacks. Fast Canadian shipping, discreet packaging, E-Transfer & Crypto accepted.</p>
+ </div>
+ <div class="cta-banner-actions">
+ <a href="#" class="btn-primary" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">Shop All Compounds</a>
+ <a href="#" class="btn-secondary" onclick="showPage('contact'); setActive(document.getElementById('nav-contact'))">Contact Us</a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ </div><!-- end home page -->
+
+ <!-- ================== SHOP PAGE ================== -->
+ <div id="page-shop" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Premium Compounds</p>
+ <h1 class="page-title">Our <span class="glow-text">Shop</span></h1>
+ <p class="page-desc">Premium Grade · Lyophilized Powder</p>
+ </div>
+ </div>
+
+ <!-- Category Filter -->
+ <div class="filter-bar">
+ <div class="container">
+ <div class="filter-row">
+ <button class="filter-btn active" id="filter-All" onclick="filterProducts('All')">All (12)</button>
+ <button class="filter-btn" id="filter-Recovery" onclick="filterProducts('Recovery')">💪 Recovery (2)</button>
+ <button class="filter-btn" id="filter-Performance" onclick="filterProducts('Performance')">⚡ Performance (3)</button>
+ <button class="filter-btn" id="filter-Wellness" onclick="filterProducts('Wellness')">🌿 Wellness (4)</button>
+ <button class="filter-btn" id="filter-Metabolic" onclick="filterProducts('Metabolic')">🔥 Metabolic (2)</button>
+ <button class="filter-btn" id="filter-Supplies" onclick="filterProducts('Supplies')">🧪 Supplies (1)</button>
+ </div>
+ </div>
+ </div>
+
+ <section class="section" style="padding-top:40px">
+ <div class="container">
+ <div class="products-grid" id="shopGrid"></div>
+ 
+ </div>
+ </section>
+ </div>
+
+ <!-- ================== BUNDLES PAGE ================== -->
+ <div id="page-bundles" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Curated Research Stacks</p>
+ <h1 class="page-title">Bundle <span class="glow-text">Collections</span></h1>
+ <p class="page-desc">Curated compound combinations for maximum results</p>
+ </div>
+ </div>
+
+ <!-- Bundle Info Bar -->
+ <div class="bundle-info-bar">
+ <div class="container">
+ <div class="bundle-info-row">
+ <div class="bundle-info-item"><span>💰</span> Bundle pricing saves vs. individual purchase</div>
+ <div class="bundle-info-item"><span>📦</span> Shipped together in one discreet package</div>
+ <div class="bundle-info-item"><span>🔬</span> Each stack designed for a specific research focus</div>
+ </div>
+ </div>
+ </div>
+
+ <section class="section" style="padding-top:40px">
+ <div class="container">
+ <div class="bundles-full-grid" id="bundlesGrid"></div>
+ 
+ </div>
+ </section>
+ </div>
+
+ <!-- ================== ABOUT PAGE ================== -->
+ <div id="page-about" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Our Story</p>
+ <h1 class="page-title">About <span class="glow-text">Nova</span></h1>
+ <p class="page-desc">Precision. Purity. Performance.</p>
+ </div>
+ </div>
+
+ <section class="section">
+ <div class="container">
+ <div class="about-grid">
+ <div class="about-content">
+ <h2 class="about-heading">Who We Are</h2>
+ <p class="about-text">Nova Premium Peptides was founded with one mission: to provide researchers with the highest quality peptide compounds available in Canada. We understand that in research, the quality of your compounds directly determines your results.</p>
+ <p class="about-text">Our team is composed of individuals deeply passionate about scientific advancement. We work exclusively with reputable manufacturers using pharmaceutical-grade synthesis processes, and subject every single batch to stringent quality verification before it ever reaches our customers.</p>
+
+ <h2 class="about-heading" style="margin-top:2.5rem">Our Mission</h2>
+ <p class="about-text">To be the most trusted source of premium peptides in Canada and North America — delivering consistency, transparency, and excellence with every order. We believe that serious research deserves serious compounds.</p>
+
+ <h2 class="about-heading" style="margin-top:2.5rem">Our Standards</h2>
+ <ul class="about-list">
+ <li>All compounds are synthesized using industry best practices</li>
+ <li>Lyophilized (freeze-dried) format for maximum shelf life and stability</li>
+ <li>Individually sealed, labeled vials — ready for reconstitution</li>
+ <li>Full batch verification before dispatch</li>
+ <li>Strict customer data privacy — never shared with third parties</li>
+ </ul>
+
+ <div class="about-stats">
+ <div class="stat-item">
+ <span class="stat-number">12+</span>
+ <span class="stat-label">Compounds</span>
+ </div>
+ <div class="stat-item">
+ <span class="stat-number">99%</span>
+ <span class="stat-label">Purity Target</span>
+ </div>
+ <div class="stat-item">
+ <span class="stat-number">4</span>
+ <span class="stat-label">Research Stacks</span>
+ </div>
+ <div class="stat-item">
+ <span class="stat-number">🇨🇦</span>
+ <span class="stat-label">Canada Based</span>
+ </div>
+ </div>
+ </div>
+ <div class="about-visual">
+ <div class="about-vial-wrap">
+ <img src="final_vial_9.png" alt="Nova Premium Peptide" class="about-vial" />
+ <div class="about-glow"></div>
+ </div>
+ <div class="about-values">
+ <div class="value-item"><span class="value-icon">🔬</span><div><strong>Premium-Grade Quality</strong><p style="font-size:0.8rem;color:var(--gray);margin-top:2px">Only the highest purity compounds make it into our catalog</p></div></div>
+ <div class="value-item"><span class="value-icon">⚗️</span><div><strong>Tested Every Batch</strong><p style="font-size:0.8rem;color:var(--gray);margin-top:2px">Verification at every stage of the production chain</p></div></div>
+ <div class="value-item"><span class="value-icon">📦</span><div><strong>Discreet Packaging</strong><p style="font-size:0.8rem;color:var(--gray);margin-top:2px">Plain outer packaging, no product names or branding visible</p></div></div>
+ <div class="value-item"><span class="value-icon">🛡️</span><div><strong>Customer Privacy</strong><p style="font-size:0.8rem;color:var(--gray);margin-top:2px">Your data and order details are always kept 100% confidential</p></div></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Reconstitution Guide -->
+ <section class="section" style="padding-top:0">
+ <div class="container">
+ <div class="recon-guide">
+ <div class="section-header">
+ <p class="section-eyebrow">Research Guide</p>
+ <h2 class="section-title">Reconstitution <span class="glow-text">Guide</span></h2>
+ <p class="section-desc">Step-by-step instructions for preparing your lyophilized peptides</p>
+ </div>
+ <div class="recon-steps">
+ <div class="recon-step">
+ <div class="recon-num">1</div>
+ <div class="recon-body">
+ <h4>Gather Supplies</h4>
+ <p>You will need: the lyophilized peptide vial, BAC Water (bacteriostatic water), sterile syringe, and alcohol swabs. All equipment should be sterile.</p>
+ </div>
+ </div>
+ <div class="recon-step">
+ <div class="recon-num">2</div>
+ <div class="recon-body">
+ <h4>Prepare the Vial</h4>
+ <p>Wipe the rubber stopper of both the peptide vial and the BAC Water vial with an alcohol swab. Allow to dry for 30–60 seconds before proceeding.</p>
+ </div>
+ </div>
+ <div class="recon-step">
+ <div class="recon-num">3</div>
+ <div class="recon-body">
+ <h4>Add BAC Water Slowly</h4>
+ <p>Insert the syringe into the BAC Water vial and draw the required amount. Inject slowly into the peptide vial along the inside wall of the glass — never directly onto the powder.</p>
+ </div>
+ </div>
+ <div class="recon-step">
+ <div class="recon-num">4</div>
+ <div class="recon-body">
+ <h4>Dissolve Gently</h4>
+ <p>Gently swirl (do not shake or vortex) the vial until the powder is fully dissolved. The solution should be clear. If it appears cloudy, discard it.</p>
+ </div>
+ </div>
+ <div class="recon-step">
+ <div class="recon-num">5</div>
+ <div class="recon-body">
+ <h4>Store Properly</h4>
+ <p>Once reconstituted, store the vial at 2–8°C (refrigerator). Use within 30 days. Lyophilized (unreconstituted) peptides store at –20°C for long-term stability.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================== FAQ PAGE ================== -->
+ <div id="page-faq" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Got Questions?</p>
+ <h1 class="page-title">Frequently <span class="glow-text">Asked</span></h1>
+ <p class="page-desc">Everything you need to know about Nova Premium Peptides</p>
+ </div>
+ </div>
+ <section class="section">
+ <div class="container">
+ <div class="faq-layout">
+ <div class="faq-sidebar">
+ <h4 class="faq-sidebar-title">Categories</h4>
+ <button class="faq-cat-btn active" onclick="filterFAQ('all', this)">All Questions</button>
+ <button class="faq-cat-btn" onclick="filterFAQ('products', this)">🔬 Products</button>
+ <button class="faq-cat-btn" onclick="filterFAQ('ordering', this)">🛒 Ordering</button>
+ <button class="faq-cat-btn" onclick="filterFAQ('shipping', this)">📦 Shipping</button>
+ <button class="faq-cat-btn" onclick="filterFAQ('payment', this)">💳 Payment</button>
+ <button class="faq-cat-btn" onclick="filterFAQ('storage', this)">❄️ Storage</button>
+ </div>
+ <div class="faq-list" id="faqList"></div>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================== SHIPPING PAGE ================== -->
+ <div id="page-shipping" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Fulfillment Info</p>
+ <h1 class="page-title">Shipping &amp; <span class="glow-text">Payment</span></h1>
+ <p class="page-desc">Everything you need to know before placing your order</p>
+ </div>
+ </div>
+ <section class="section">
+ <div class="container">
+ <div class="info-grid">
+ <div class="info-card">
+ <div class="info-icon">📦</div>
+ <h3 class="info-title">Shipping Policy</h3>
+ <ul class="info-list">
+ <li>Orders are processed within <strong>1–2 business days</strong></li>
+ <li>Standard delivery: <strong>3–7 business days</strong> across Canada</li>
+ <li>All packages shipped <strong>discreetly</strong> — no product names on label</li>
+ <li>Tracking number sent via email once dispatched</li>
+ <li>Shipping within <strong>Canada only</strong> at this time</li>
+ <li>Orders placed on weekends/holidays are processed next business day</li>
+ </ul>
+ </div>
+ <div class="info-card">
+ <div class="info-icon">💳</div>
+ <h3 class="info-title">Payment Methods</h3>
+ <ul class="info-list">
+ <li><strong>E-Transfer (Canada)</strong> — preferred method for Canadian customers</li>
+ <li><strong>Bitcoin (BTC)</strong> — wallet address provided at checkout</li>
+ <li><strong>Ethereum (ETH)</strong> — wallet address provided at checkout</li>
+ <li><strong>USDT (Tether)</strong> — wallet address provided at checkout</li>
+ <li>Payment instructions emailed after order confirmation</li>
+ <li>Orders held for <strong>24 hours</strong> pending payment — then cancelled if unpaid</li>
+ <li>We do <strong>not</strong> accept Stripe, PayPal, or credit cards</li>
+ </ul>
+ </div>
+ <div class="info-card">
+ <div class="info-icon">🔄</div>
+ <h3 class="info-title">Returns &amp; Refunds</h3>
+ <ul class="info-list">
+ <li>All sales are <strong>final</strong></li>
+ <li>Damaged or incorrect product? Contact us within <strong>48 hours</strong> of delivery</li>
+ <li>Include your order number and photos of the issue</li>
+ <li>We will investigate and arrange a replacement or resolution</li>
+ <li>Customer satisfaction is always our priority</li>
+ </ul>
+ </div>
+ <div class="info-card">
+ <div class="info-icon">❄️</div>
+ <h3 class="info-title">Storage &amp; Handling</h3>
+ <ul class="info-list">
+ <li>All peptides shipped as <strong>lyophilized (freeze-dried) powder</strong></li>
+ <li>Unopened vials: store at <strong>–20°C</strong> for long-term stability</li>
+ <li>Reconstituted solution: store at <strong>2–8°C</strong> — use within 30 days</li>
+ <li>Keep all vials away from direct <strong>light and heat</strong></li>
+ <li>BAC Water required for reconstitution — available in our shop</li>
+ <li>Do not freeze reconstituted peptide solutions</li>
+ </ul>
+ </div>
+ </div>
+
+ <!-- Order Process Timeline -->
+ <div class="order-timeline">
+ <h3 class="timeline-title">Your Order Journey</h3>
+ <div class="timeline-steps">
+ <div class="t-step"><div class="t-dot">1</div><div class="t-label">Order Placed</div></div>
+ <div class="t-line"></div>
+ <div class="t-step"><div class="t-dot">2</div><div class="t-label">Payment Confirmed</div></div>
+ <div class="t-line"></div>
+ <div class="t-step"><div class="t-dot">3</div><div class="t-label">Order Packaged</div></div>
+ <div class="t-line"></div>
+ <div class="t-step"><div class="t-dot">4</div><div class="t-label">Shipped + Tracked</div></div>
+ <div class="t-line"></div>
+ <div class="t-step"><div class="t-dot">5</div><div class="t-label">Delivered 🇨🇦</div></div>
+ </div>
+ <p class="timeline-note">⏱ Total estimated time: 1–2 days processing + 3–7 days shipping</p>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================== CONTACT PAGE ================== -->
+ <div id="page-contact" class="page">
+ <div class="page-hero">
+ <div class="container">
+ <p class="section-eyebrow">Get In Touch</p>
+ <h1 class="page-title">Contact <span class="glow-text">Us</span></h1>
+ <p class="page-desc">We're here to help with any questions about our products or orders</p>
+ </div>
+ </div>
+ <section class="section">
+ <div class="container">
+ <div class="contact-grid">
+ <div class="contact-info">
+ <h3 class="contact-info-title">Reach Out</h3>
+ <p class="contact-info-text">Have a question about our compounds, an existing order, or payment? We typically respond within 24 hours on business days.</p>
+ <div class="contact-details">
+ <div class="contact-detail">
+ <span class="contact-icon">📧</span>
+ <div>
+ <p class="contact-label">Email</p>
+ <p class="contact-value">info@novapremiumeptides.ca</p>
+ </div>
+ </div>
+ <div class="contact-detail">
+ <span class="contact-icon">🇨🇦</span>
+ <div>
+ <p class="contact-label">Location</p>
+ <p class="contact-value">Based in Canada — Shipping nationwide</p>
+ </div>
+ </div>
+ <div class="contact-detail">
+ <span class="contact-icon">⏰</span>
+ <div>
+ <p class="contact-label">Response Time</p>
+ <p class="contact-value">Within 24 hours (business days)</p>
+ </div>
+ </div>
+ <div class="contact-detail">
+ <span class="contact-icon">💳</span>
+ <div>
+ <p class="contact-label">Payment Support</p>
+ <p class="contact-value">E-Transfer &amp; Crypto payment help available</p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Quick Links -->
+ <div class="contact-quick-links">
+ <p class="cql-title">Quick Links</p>
+ <div class="cql-grid">
+ <button class="cql-btn" onclick="showPage('faq'); setActive(document.getElementById('nav-faq'))">📋 FAQ</button>
+ <button class="cql-btn" onclick="showPage('shipping'); setActive(document.getElementById('nav-shipping'))">📦 Shipping Info</button>
+ <button class="cql-btn" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">🛒 Shop Now</button>
+ <button class="cql-btn" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">💰 Bundles</button>
+ </div>
+ </div>
+
+ 
+ </div>
+ <form class="contact-form" onsubmit="submitContact(event)" id="contactForm">
+ <h3 class="form-title">Send a Message</h3>
+ <div class="form-row">
+ <div class="form-group">
+ <label class="form-label">First Name</label>
+ <input type="text" class="form-input" placeholder="John" required />
+ </div>
+ <div class="form-group">
+ <label class="form-label">Last Name</label>
+ <input type="text" class="form-input" placeholder="Smith" required />
+ </div>
+ </div>
+ <div class="form-group">
+ <label class="form-label">Email Address</label>
+ <input type="email" class="form-input" placeholder="john@example.com" required />
+ </div>
+ <div class="form-group">
+ <label class="form-label">Subject</label>
+ <select class="form-input" required>
+ <option value="">Select a subject</option>
+ <option>Product Inquiry</option>
+ <option>Order Status</option>
+ <option>Shipping Question</option>
+ <option>Payment Help</option>
+ <option>Reconstitution Help</option>
+ <option>Bundle Information</option>
+ <option>Other</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label class="form-label">Order Number (if applicable)</label>
+ <input type="text" class="form-input" placeholder="NOVA-XXXX (optional)" />
+ </div>
+ <div class="form-group">
+ <label class="form-label">Message</label>
+ <textarea class="form-input form-textarea" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+ </div>
+ <button type="submit" class="btn-primary form-submit" id="contact-submit-btn">Send Message</button>
+ </form>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ===== FOOTER ===== -->
+ <footer class="footer">
+ <div class="container">
+ <div class="footer-grid">
+ <div class="footer-brand">
+ <div class="footer-logo">
+ <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+ <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+ <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
+ </svg>
+ <span class="footer-logo-text">NOVA</span>
+ </div>
+ <p class="footer-tagline">Premium Peptides · Canada</p>
+ <p class="footer-desc">Premium peptides for serious results. Precision. Purity. Performance. Lyophilized, verified, and discreetly shipped across Canada.</p>
+ 
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-col-title">Navigation</h4>
+ <ul class="footer-links">
+ <li><a href="#" onclick="showPage('home'); setActive(document.getElementById('nav-home'))">Home</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">Shop</a></li>
+ <li><a href="#" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">Bundles</a></li>
+ <li><a href="#" onclick="showPage('about'); setActive(document.getElementById('nav-about'))">About Us</a></li>
+ <li><a href="#" onclick="showPage('faq'); setActive(document.getElementById('nav-faq'))">FAQ</a></li>
+ <li><a href="#" onclick="showPage('shipping'); setActive(document.getElementById('nav-shipping'))">Shipping &amp; Payment</a></li>
+ <li><a href="#" onclick="showPage('contact'); setActive(document.getElementById('nav-contact'))">Contact</a></li>
+ </ul>
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-col-title">Products</h4>
+ <ul class="footer-links">
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">BPC-157 (10mg) — $90</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">TB-500 (10mg) — $90</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">CJC + IPA (10mg) — $95</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">NAD+ (500mg) — $100</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">Retatrutide (10mg) — $105</a></li>
+ <li><a href="#" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))">GHK-Cu (100mg) — $140</a></li>
+ </ul>
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-col-title">Bundles</h4>
+ <ul class="footer-links">
+ <li><a href="#" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">Recovery Collection — $170</a></li>
+ <li><a href="#" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">Performance Stack — $185</a></li>
+ <li><a href="#" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">Wellness Collection — $250</a></li>
+ <li><a href="#" onclick="showPage('bundles'); setActive(document.getElementById('nav-bundles'))">Nova Metabolic Stack — $290</a></li>
+ </ul>
+ <div class="footer-payment-icons">
+ <span class="fp-icon">🏦 E-Transfer</span>
+ <span class="fp-icon">₿ Crypto</span>
+ </div>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2025 Nova Premium Peptides. All rights reserved.</p>
+ <p>Premium Peptides · Fast Shipping Across Canada</p>
+ </div>
+ </div>
+ </footer>
+
+ <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+ <script src="script.js"></script>
+</body>
+</html>
