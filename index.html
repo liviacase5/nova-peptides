@@ -15,20 +15,23 @@
  <!-- ===== NAVBAR ===== -->
  <nav id="navbar" class="navbar">
  <div class="nav-container">
- <a href="#home" class="nav-logo" onclick="showPage('home')">
- <div class="logo-icon">
- <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
- <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
- <polygon points="16,6 26,12 26,20 16,26 6,20 6,12" fill="#0F172A"/>
- <path d="M10 12 L16 8 L22 12 L22 20 L16 24 L10 20 Z" fill="#2563EB" opacity="0.3"/>
- <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
- </svg>
- </div>
- <div class="logo-text">
- <span class="logo-nova">NOVA</span>
- <span class="logo-sub">PREMIUM PEPTIDES</span>
- </div>
- </a>
+  <a href="#home" class="nav-logo" onclick="showPage('home')" style="text-decoration: none;">
+  <img src="nova-logo.png" alt="NOVA Premium Peptides" style="max-height: 48px; display: block;" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='flex';">
+  <div id="header-logo-fallback" style="display: none; align-items: center; gap: 12px;">
+  <div class="logo-icon">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+  <polygon points="16,6 26,12 26,20 16,26 6,20 6,12" fill="#0F172A"/>
+  <path d="M10 12 L16 8 L22 12 L22 20 L16 24 L10 20 Z" fill="#2563EB" opacity="0.3"/>
+  <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
+  </svg>
+  </div>
+  <div class="logo-text">
+  <span class="logo-nova">NOVA</span>
+  <span class="logo-sub">PREMIUM PEPTIDES</span>
+  </div>
+  </div>
+  </a>
 
  <div class="nav-links" id="navLinks">
  <a href="#" class="nav-link active" id="nav-home" onclick="showPage('home'); setActive(this)">Home</a>
@@ -809,14 +812,17 @@
  <footer class="footer">
  <div class="container">
  <div class="footer-grid">
- <div class="footer-brand">
- <div class="footer-logo">
- <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
- <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
- <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
- </svg>
- <span class="footer-logo-text">NOVA</span>
- </div>
+  <div class="footer-brand">
+  <div class="footer-logo">
+  <img src="nova-logo.png" alt="NOVA Premium Peptides" style="max-height: 38px; display: block; margin-bottom: 8px;" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex';">
+  <div id="footer-logo-fallback" style="display: none; align-items: center; gap: 8px; margin-bottom: 8px;">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+  <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+  <path d="M13 16 L16 10 L19 16 L16 22 Z" fill="#3B82F6"/>
+  </svg>
+  <span class="footer-logo-text">NOVA</span>
+  </div>
+  </div>
  <p class="footer-tagline">Premium Peptides · Canada</p>
  <p class="footer-desc">Premium peptides for serious results. Precision. Purity. Performance. Lyophilized, verified, and discreetly shipped across Canada.</p>
  
