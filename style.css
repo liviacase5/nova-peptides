@@ -939,3 +939,34 @@ body {
   .cta-banner { padding: 36px 24px; }
   .cql-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== STICKY MOBILE SHOP BUTTON ===== */
+.mobile-sticky-btn {
+  display: none;
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  z-index: 950;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: #fff; font-family: var(--font-main); font-weight: 700;
+  font-size: 0.95rem; letter-spacing: 0.5px;
+  padding: 14px 40px; border-radius: 100px;
+  text-decoration: none; box-shadow: 0 8px 30px rgba(37,99,235,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+.mobile-sticky-btn.visible { opacity: 1; pointer-events: all; }
+.mobile-sticky-btn:hover { transform: translateX(-50%) translateY(-2px); box-shadow: 0 12px 36px rgba(37,99,235,0.65); }
+@media (max-width: 768px) { .mobile-sticky-btn { display: block; } }
+
+/* ===== CTA EMAIL DISPLAY ===== */
+.cta-contact-email {
+  font-size: 1rem; color: var(--blue-light); font-weight: 600;
+  margin-top: 12px; letter-spacing: 0.3px;
+}
+
+/* ===== FOOTER RESEARCH NOTE ===== */
+.footer-bottom p:last-child {
+  color: rgba(148, 163, 184, 0.55);
+  font-size: 0.75rem; font-style: italic;
+}

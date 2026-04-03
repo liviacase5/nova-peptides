@@ -47,25 +47,25 @@ const products = [
   {
     id: 5, name: 'GHK-Cu', dose: '100mg', category: 'Wellness', price: 140,
     img: 'final_vial_6.png', badge: 'PREMIUM',
-    short: 'Copper Peptide — skin regeneration, anti-aging & wound healing research.',
-    desc: 'GHK-Cu (Glycyl-L-histidyl-L-lysine copper complex) is a naturally occurring copper complex first isolated from human plasma. It has been extensively studied for its potent ability to upregulate collagen, elastin, and glycosaminoglycan synthesis. Research also covers anti-inflammatory properties, antioxidant activity, and DNA repair mechanisms.',
-    benefits: ['Collagen & elastin synthesis', 'Wound healing acceleration', 'Anti-inflammatory activity', 'Antioxidant & DNA repair research'],
+    short: 'Advanced copper peptide complex for collagen synthesis, skin regeneration, and anti-aging support.',
+    desc: 'GHK-Cu is a naturally occurring copper complex known for its powerful ability to stimulate collagen, elastin, and glycosaminoglycan synthesis. One of the most studied peptides for skin regeneration and wound healing, it also exhibits strong anti-inflammatory and antioxidant properties at the cellular level.',
+    benefits: ['Collagen & elastin synthesis', 'Skin regeneration support', 'Anti-inflammatory activity', 'Wound healing acceleration'],
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
     id: 6, name: 'NAD+', dose: '500mg', category: 'Wellness', price: 100,
     img: 'final_vial_7.png', badge: 'POPULAR',
-    short: 'Nicotinamide Adenine Dinucleotide — energy, longevity & cellular aging research.',
-    desc: 'NAD+ (Nicotinamide Adenine Dinucleotide) is a coenzyme found in all living cells and is essential for hundreds of metabolic processes. It plays a central role in energy metabolism (converting food to ATP), serving as a substrate for sirtuins (longevity proteins) and PARP enzymes involved in DNA repair. NAD+ levels decline significantly with age, making it a major focus in longevity research.',
-    benefits: ['Cellular energy metabolism', 'Sirtuin & longevity pathway research', 'DNA repair mechanisms', 'Neurological & cognitive research'],
+    short: 'Cellular coenzyme essential for energy production, DNA repair, and longevity support.',
+    desc: 'NAD+ is one of the most critical coenzymes in the human body, fueling cellular energy production and supporting sirtuin (longevity protein) activation. NAD+ levels decline significantly with age — supplementing this pathway is one of the most studied approaches to longevity and metabolic health. Known for improvements in energy, mental clarity, and cellular recovery.',
+    benefits: ['Cellular energy & ATP production', 'Sirtuin & longevity activation', 'DNA repair mechanisms', 'Neurological & cognitive support'],
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
     id: 7, name: 'MOTS-C', dose: '10mg', category: 'Wellness', price: 95,
     img: 'final_vial_8.png', badge: null,
-    short: 'Mitochondrial peptide — metabolic regulation & exercise research.',
-    desc: 'MOTS-C is a mitochondria-derived peptide encoded within the 12S rRNA of the mitochondrial genome. Unlike nuclear-encoded peptides, it originates from the mitochondria and has been shown in research to regulate insulin sensitivity, activate AMPK pathways, and improve exercise capacity. It represents a novel class of mitochondrial signaling molecules with broad metabolic applications.',
-    benefits: ['AMPK pathway activation research', 'Insulin sensitivity studies', 'Exercise capacity & endurance', 'Mitochondrial signaling research'],
+    short: 'Mitochondria-derived peptide for metabolic optimization, insulin sensitivity, and exercise performance.',
+    desc: 'MOTS-C is a groundbreaking mitochondria-derived peptide that activates AMPK pathways, improves insulin sensitivity, and enhances exercise capacity. Naturally encoded within the mitochondrial genome, it represents one of the most novel metabolic agents available — with strong data showing impact on body composition and cellular energy regulation.',
+    benefits: ['AMPK pathway activation', 'Insulin sensitivity improvement', 'Exercise capacity & endurance', 'Mitochondrial energy regulation'],
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
@@ -79,17 +79,17 @@ const products = [
   {
     id: 9, name: 'Retatrutide', dose: '10mg', category: 'Metabolic', price: 105,
     img: 'final_vial_10.png', badge: 'NEW',
-    short: 'Triple receptor agonist (GLP-1/GIP/Glucagon) — advanced metabolic research.',
-    desc: 'Retatrutide is a novel triple receptor agonist targeting GLP-1 (glucagon-like peptide-1), GIP (glucose-dependent insulinotropic polypeptide), and glucagon receptors simultaneously. This tri-agonist approach has shown significant interest in obesity and metabolic disease research, as each receptor pathway contributes distinct complementary mechanisms to glucose homeostasis, energy expenditure, and body composition regulation.',
-    benefits: ['GLP-1/GIP/Glucagon triple agonism', 'Metabolic disease research models', 'Body composition studies', 'Glucose homeostasis research'],
+    short: 'Advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss.',
+    desc: 'Retatrutide is an advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss. Known for its powerful effects on weight management, it is one of the most effective compounds available for cutting phases. As a triple receptor agonist (GLP-1/GIP/Glucagon), it targets multiple fat-loss mechanisms simultaneously for superior metabolic outcomes.',
+    benefits: ['Appetite regulation & control', 'Metabolic efficiency & fat loss', 'GLP-1/GIP/Glucagon triple agonism', 'Body composition optimization'],
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
     id: 10, name: 'Tesamorelin', dose: '10mg', category: 'Metabolic', price: 105,
     img: 'final_vial_11.png', badge: null,
-    short: 'GHRH analogue — growth hormone secretion & visceral fat research.',
-    desc: 'Tesamorelin is a synthetic analogue of human growth hormone-releasing hormone (GHRH) consisting of the full 44-amino acid sequence with a trans-3-hexenoic acid group attached at the N-terminus for stability. Research focuses on its ability to stimulate endogenous GH secretion in a physiological pulsatile pattern, its effects on visceral adiposity, and IGF-1 modulation.',
-    benefits: ['Endogenous GH secretion research', 'Visceral fat reduction studies', 'IGF-1 modulation research', 'Pituitary GHRH receptor research'],
+    short: 'GHRH analogue that stimulates natural GH release, reduces visceral fat, and supports lean body composition.',
+    desc: 'Tesamorelin is a synthetic GHRH analogue that stimulates the body\'s natural growth hormone production in a physiological pulsatile pattern. Particularly effective for visceral fat reduction and lean mass preservation, it is one of the most clinically-studied peptides for body composition optimization. Works synergistically with Retatrutide in the Nova Metabolic Stack.',
+    benefits: ['Natural GH stimulation', 'Visceral fat reduction', 'Lean mass preservation', 'IGF-1 modulation & body composition'],
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
@@ -124,13 +124,13 @@ const bundles = [
     name: 'Performance Stack',
     subtitle: 'Output • Recovery • Growth Support',
     emoji: '⚡',
-    description: 'The Performance Stack combines CJC-1295 + Ipamorelin with IGF-1 LR3 for a comprehensive approach to growth hormone secretion and downstream anabolic signaling. CJC+IPA stimulates GH release via complementary pathways, while IGF-1 LR3 activates downstream growth factor receptors for muscle and metabolic research.',
+    description: 'A powerful combination designed to support lean muscle retention, fat loss, and metabolic optimization. Ideal for those looking to improve body composition while maintaining performance. CJC+IPA stimulates natural GH release through complementary pathways, while IGF-1 LR3 activates downstream growth factor receptors to drive muscle and metabolic results.',
     items: [
       { name: 'CJC + IPA (10mg)', price: '$95', individual: true },
       { name: 'IGF-1 LR3 (1mg)', price: '$90', individual: true },
     ],
     stackPrice: 185, value: null,
-    highlights: ['GH secretion + downstream IGF-1 signaling', 'Complementary receptor pathways', 'Anabolic research model'],
+    highlights: ['Lean muscle retention & fat loss', 'Natural GH release + downstream IGF-1', 'Body composition optimization'],
   },
   {
     id: 'wellness',
@@ -152,7 +152,7 @@ const bundles = [
     name: 'Nova Metabolic Stack',
     subtitle: 'Composition • Optimization • Advanced Support',
     emoji: '🔥',
-    description: 'Our most advanced research bundle. Retatrutide — a next-generation triple receptor agonist — combined with Tesamorelin for GH-mediated fat metabolism research and MOTS-C for mitochondrial metabolic support. This three-compound stack covers GLP-1/GIP/Glucagon signaling, GHRH-mediated GH release, and AMPK-pathway activation.',
+    description: 'The NOVA Metabolic Stack combines Retatrutide, Tesamorelin, and MOTS-C to target appetite control, visceral fat reduction, and cellular energy. Built for aggressive fat loss with full metabolic support — covering GLP-1/GIP/Glucagon triple-receptor signaling, GHRH-mediated GH release, and AMPK-pathway activation for three-dimensional metabolic optimization.',
     items: [
       { name: 'Retatrutide (10mg)', price: '$105', individual: true },
       { name: 'Tesamorelin (10mg)', price: '$105', individual: true },
@@ -367,24 +367,21 @@ function showToast(msg) {
 
 // ===== ANIMATED STATS COUNTER =====
 function animateStats() {
-  const counters = document.querySelectorAll('.stat-num[data-target]');
-  counters.forEach(counter => {
-    if (counter.dataset.animated) return;
-    counter.dataset.animated = '1';
-    const target = +counter.dataset.target;
-    const duration = 1800;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      counter.textContent = Math.floor(current);
-    }, 16);
-  });
+  // Stats are pre-filled with correct values — no count-from-zero animation needed
+  // Values show immediately for trust: 12+, 99%+, 4, 24h
 }
+
+// ===== MOBILE STICKY BUTTON =====
+function updateStickyBtn() {
+  const btn = document.getElementById('mobileStickyBtn');
+  if (!btn) return;
+  if (window.scrollY > 200) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+}
+window.addEventListener('scroll', updateStickyBtn, { passive: true });
 
 // ===== NAVBAR SCROLL =====
 window.addEventListener('scroll', () => {
