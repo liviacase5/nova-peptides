@@ -21,7 +21,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
-    id: 2, name: 'CJC + IPA', dose: '10mg', category: 'Performance', price: 95,
+    id: 2, name: 'CJC + IPA', dose: '10mg', category: 'Performance', price: 90,
     img: 'final_vial_0.png', badge: 'POPULAR',
     short: 'CJC-1295 + Ipamorelin blend — GH secretion & body composition research.',
     desc: 'A synergistic combination of CJC-1295 (a GHRH analogue) and Ipamorelin (a selective GH secretagogue). When combined, these compounds stimulate GH release through different and complementary mechanisms — CJC-1295 amplifies the GHRH signal while Ipamorelin stimulates the ghrelin receptor. Together they produce a more pronounced and sustained GH pulse.',
@@ -29,7 +29,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
-    id: 3, name: 'CJC + DAC', dose: '5mg', category: 'Performance', price: 85,
+    id: 3, name: 'CJC + DAC', dose: '5mg', category: 'Performance', price: 90,
     img: 'final_vial_4.png', badge: null,
     short: 'CJC-1295 with Drug Affinity Complex — extended GH release research.',
     desc: 'CJC-1295 with DAC (Drug Affinity Complex) is a long-acting GHRH analogue. The DAC technology allows the peptide to bind to albumin in the bloodstream, dramatically extending its half-life compared to the standard GHRH analogue. Research focuses on sustained GH and IGF-1 release patterns and anabolic signaling over extended periods.',
@@ -37,7 +37,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
-    id: 4, name: 'IGF-1 LR3', dose: '1mg', category: 'Performance', price: 90,
+    id: 4, name: 'IGF-1 LR3', dose: '1mg', category: 'Performance', price: 120,
     img: 'final_vial_5.png', badge: null,
     short: 'Insulin-like Growth Factor 1 LR3 — muscle development & metabolic research.',
     desc: 'IGF-1 LR3 is a recombinant analogue of native IGF-1 with a modified N-terminal and a glutamate to arginine substitution at position 3. These modifications significantly reduce IGF-1 binding protein affinity, resulting in a longer serum half-life. Research focuses on its role in muscle cell proliferation, protein synthesis, and insulin-sensitizing metabolic effects.',
@@ -45,7 +45,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 28 days',
   },
   {
-    id: 5, name: 'GHK-Cu', dose: '100mg', category: 'Wellness', price: 140,
+    id: 5, name: 'GHK-Cu', dose: '100mg', category: 'Wellness', price: 150,
     img: 'final_vial_6.png', badge: 'PREMIUM',
     short: 'Advanced copper peptide complex for collagen synthesis, skin regeneration, and anti-aging support.',
     desc: 'GHK-Cu is a naturally occurring copper complex known for its powerful ability to stimulate collagen, elastin, and glycosaminoglycan synthesis. One of the most studied peptides for skin regeneration and wound healing, it also exhibits strong anti-inflammatory and antioxidant properties at the cellular level.',
@@ -77,7 +77,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
-    id: 9, name: 'Retatrutide', dose: '10mg', category: 'Metabolic', price: 105,
+    id: 9, name: 'Retatrutide', dose: '10mg', category: 'Metabolic', price: 110,
     img: 'final_vial_10.png', badge: 'NEW',
     short: 'Advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss.',
     desc: 'Retatrutide is an advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss. Known for its powerful effects on weight management, it is one of the most effective compounds available for cutting phases. As a triple receptor agonist (GLP-1/GIP/Glucagon), it targets multiple fat-loss mechanisms simultaneously for superior metabolic outcomes.',
@@ -85,7 +85,7 @@ const products = [
     storage: 'Lyophilized: –20°C | Reconstituted: 2–8°C, 30 days',
   },
   {
-    id: 10, name: 'Tesamorelin', dose: '10mg', category: 'Metabolic', price: 105,
+    id: 10, name: 'Tesamorelin', dose: '10mg', category: 'Metabolic', price: 110,
     img: 'final_vial_11.png', badge: null,
     short: 'GHRH analogue that stimulates natural GH release, reduces visceral fat, and supports lean body composition.',
     desc: 'Tesamorelin is a synthetic GHRH analogue that stimulates the body\'s natural growth hormone production in a physiological pulsatile pattern. Particularly effective for visceral fat reduction and lean mass preservation, it is one of the most clinically-studied peptides for body composition optimization. Works synergistically with Retatrutide in the Nova Metabolic Stack.',
@@ -115,7 +115,7 @@ const bundles = [
       { name: 'BPC-157 (10mg)', price: '$90', individual: true },
       { name: 'TB-500 (10mg)', price: '$90', individual: true },
     ],
-    stackPrice: 170, value: null,
+    stackPrice: 165, value: 180,
     highlights: ['Complementary repair mechanisms', 'Tendon, ligament & muscle focus', 'Well-documented combination'],
   },
   {
@@ -126,10 +126,10 @@ const bundles = [
     emoji: '⚡',
     description: 'A powerful combination designed to support lean muscle retention, fat loss, and metabolic optimization. Ideal for those looking to improve body composition while maintaining performance. CJC+IPA stimulates natural GH release through complementary pathways, while IGF-1 LR3 activates downstream growth factor receptors to drive muscle and metabolic results.',
     items: [
-      { name: 'CJC + IPA (10mg)', price: '$95', individual: true },
-      { name: 'IGF-1 LR3 (1mg)', price: '$90', individual: true },
+      { name: 'CJC + IPA (10mg)', price: '$90', individual: true },
+      { name: 'IGF-1 LR3 (1mg)', price: '$120', individual: true },
     ],
-    stackPrice: 185, value: null,
+    stackPrice: 190, value: 210,
     highlights: ['Lean muscle retention & fat loss', 'Natural GH release + downstream IGF-1', 'Body composition optimization'],
   },
   {
@@ -143,7 +143,7 @@ const bundles = [
       { name: 'NAD+ (500mg)', price: '$100', individual: true },
       { name: 'MOTS-C (10mg)', price: '$95', individual: true },
     ],
-    stackPrice: 250, value: null,
+    stackPrice: 175, value: 195,
     highlights: ['Mitochondrial energy & signaling', 'AMPK & sirtuin pathway research', 'Longevity-focused combination'],
   },
   {
@@ -154,11 +154,11 @@ const bundles = [
     emoji: '🔥',
     description: 'The NOVA Metabolic Stack combines Retatrutide, Tesamorelin, and MOTS-C to target appetite control, visceral fat reduction, and cellular energy. Built for aggressive fat loss with full metabolic support — covering GLP-1/GIP/Glucagon triple-receptor signaling, GHRH-mediated GH release, and AMPK-pathway activation for three-dimensional metabolic optimization.',
     items: [
-      { name: 'Retatrutide (10mg)', price: '$105', individual: true },
-      { name: 'Tesamorelin (10mg)', price: '$105', individual: true },
+      { name: 'Retatrutide (10mg)', price: '$110', individual: true },
+      { name: 'Tesamorelin (10mg)', price: '$110', individual: true },
       { name: 'MOTS-C (10mg)', price: '$95', individual: true },
     ],
-    stackPrice: 290, value: 320,
+    stackPrice: 265, value: 315,
     highlights: ['Triple-receptor GLP-1/GIP/Glucagon agonism', 'GHRH-mediated GH & fat metabolism', 'AMPK pathway activation'],
   },
 ];
