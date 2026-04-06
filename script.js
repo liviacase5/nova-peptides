@@ -6,7 +6,7 @@
 const products = [
   {
     id: 0, name: 'BPC-157', dose: '10mg', category: 'Recovery', price: 90,
-    img: 'final_vial_2.png', badge: 'BESTSELLER',
+    badge: 'BESTSELLER',
     short: 'Body Protection Compound — tissue healing & injury recovery research.',
     desc: 'BPC-157 (Body Protection Compound-157) is a pentadecapeptide made up of 15 amino acids. It is a partial sequence of body protection compound that is found in and isolated from human gastric juice. Extensively studied for its cytoprotective properties and ability to support tendon, ligament, and muscle tissue repair.',
     benefits: ['Tissue repair research', 'Tendon & ligament support', 'Anti-inflammatory mechanisms', 'Gastrointestinal research'],
@@ -14,7 +14,7 @@ const products = [
   },
   {
     id: 1, name: 'TB-500', dose: '10mg', category: 'Recovery', price: 90,
-    img: 'final_vial_3.png', badge: 'POPULAR',
+    badge: 'POPULAR',
     short: 'Thymosin Beta-4 — muscle & soft tissue regeneration research.',
     desc: 'TB-500 is a synthetic version of Thymosin Beta-4, a naturally occurring peptide found in virtually all human and animal cells. Research has focused on its role in cell migration and proliferation, regulation of actin polymerization, and support of wound healing and tissue regeneration processes.',
     benefits: ['Muscle & soft tissue repair', 'Wound healing research', 'Anti-fibrotic properties', 'Vascular & cardiac research'],
@@ -22,7 +22,7 @@ const products = [
   },
   {
     id: 2, name: 'CJC + IPA', dose: '10mg', category: 'Performance', price: 90,
-    img: 'final_vial_0.png', badge: 'POPULAR',
+    badge: 'POPULAR',
     short: 'CJC-1295 + Ipamorelin blend — GH secretion & body composition research.',
     desc: 'A synergistic combination of CJC-1295 (a GHRH analogue) and Ipamorelin (a selective GH secretagogue). When combined, these compounds stimulate GH release through different and complementary mechanisms — CJC-1295 amplifies the GHRH signal while Ipamorelin stimulates the ghrelin receptor. Together they produce a more pronounced and sustained GH pulse.',
     benefits: ['Growth hormone secretion research', 'Body composition studies', 'Recovery & performance metrics', 'Synergistic GHRH + ghrelin pathway'],
@@ -30,7 +30,7 @@ const products = [
   },
   {
     id: 3, name: 'CJC + DAC', dose: '5mg', category: 'Performance', price: 90,
-    img: 'final_vial_4.png', badge: null,
+    badge: null,
     short: 'CJC-1295 with Drug Affinity Complex — extended GH release research.',
     desc: 'CJC-1295 with DAC (Drug Affinity Complex) is a long-acting GHRH analogue. The DAC technology allows the peptide to bind to albumin in the bloodstream, dramatically extending its half-life compared to the standard GHRH analogue. Research focuses on sustained GH and IGF-1 release patterns and anabolic signaling over extended periods.',
     benefits: ['Extended GH release studies', 'IGF-1 elevation research', 'Anabolic signaling research', 'Long-acting GHRH analogue model'],
@@ -38,7 +38,7 @@ const products = [
   },
   {
     id: 4, name: 'IGF-1 LR3', dose: '1mg', category: 'Performance', price: 120,
-    img: 'final_vial_5.png', badge: null,
+    badge: null,
     short: 'Insulin-like Growth Factor 1 LR3 — muscle development & metabolic research.',
     desc: 'IGF-1 LR3 is a recombinant analogue of native IGF-1 with a modified N-terminal and a glutamate to arginine substitution at position 3. These modifications significantly reduce IGF-1 binding protein affinity, resulting in a longer serum half-life. Research focuses on its role in muscle cell proliferation, protein synthesis, and insulin-sensitizing metabolic effects.',
     benefits: ['Muscle cell proliferation studies', 'Protein synthesis research', 'Metabolic regulation', 'Reduced binding protein affinity vs native IGF-1'],
@@ -46,7 +46,7 @@ const products = [
   },
   {
     id: 5, name: 'GHK-Cu', dose: '100mg', category: 'Wellness', price: 150,
-    img: 'final_vial_6.png', badge: 'PREMIUM',
+    badge: 'PREMIUM',
     short: 'Advanced copper peptide complex for collagen synthesis, skin regeneration, and anti-aging support.',
     desc: 'GHK-Cu is a naturally occurring copper complex known for its powerful ability to stimulate collagen, elastin, and glycosaminoglycan synthesis. One of the most studied peptides for skin regeneration and wound healing, it also exhibits strong anti-inflammatory and antioxidant properties at the cellular level.',
     benefits: ['Collagen & elastin synthesis', 'Skin regeneration support', 'Anti-inflammatory activity', 'Wound healing acceleration'],
@@ -54,7 +54,7 @@ const products = [
   },
   {
     id: 6, name: 'NAD+', dose: '500mg', category: 'Wellness', price: 100,
-    img: 'final_vial_7.png', badge: 'POPULAR',
+    badge: 'POPULAR',
     short: 'Cellular coenzyme essential for energy production, DNA repair, and longevity support.',
     desc: 'NAD+ is one of the most critical coenzymes in the human body, fueling cellular energy production and supporting sirtuin (longevity protein) activation. NAD+ levels decline significantly with age — supplementing this pathway is one of the most studied approaches to longevity and metabolic health. Known for improvements in energy, mental clarity, and cellular recovery.',
     benefits: ['Cellular energy & ATP production', 'Sirtuin & longevity activation', 'DNA repair mechanisms', 'Neurological & cognitive support'],
@@ -62,7 +62,7 @@ const products = [
   },
   {
     id: 7, name: 'MOTS-C', dose: '10mg', category: 'Wellness', price: 95,
-    img: 'final_vial_8.png', badge: null,
+    badge: null,
     short: 'Mitochondria-derived peptide for metabolic optimization, insulin sensitivity, and exercise performance.',
     desc: 'MOTS-C is a groundbreaking mitochondria-derived peptide that activates AMPK pathways, improves insulin sensitivity, and enhances exercise capacity. Naturally encoded within the mitochondrial genome, it represents one of the most novel metabolic agents available — with strong data showing impact on body composition and cellular energy regulation.',
     benefits: ['AMPK pathway activation', 'Insulin sensitivity improvement', 'Exercise capacity & endurance', 'Mitochondrial energy regulation'],
@@ -70,7 +70,7 @@ const products = [
   },
   {
     id: 8, name: 'MT2', dose: '10mg', category: 'Wellness', price: 70,
-    img: 'final_vial_9.png', badge: null,
+    badge: null,
     short: 'Melanotan II — melanocortin receptor & pigmentation research.',
     desc: 'Melanotan II (MT-2) is a synthetic analogue of the naturally occurring hormone alpha-MSH (alpha-melanocyte-stimulating hormone). It binds to melanocortin receptors (MC1-MC5) with high affinity. Research applications include study of melanin pigmentation pathways, appetite regulation, and melanocortin system signaling.',
     benefits: ['Melanocortin receptor binding studies', 'Pigmentation pathway research', 'Appetite regulation research', 'MC1-MC5 receptor pharmacology'],
@@ -78,7 +78,7 @@ const products = [
   },
   {
     id: 9, name: 'Retatrutide', dose: '10mg', category: 'Metabolic', price: 110,
-    img: 'final_vial_10.png', badge: 'NEW',
+    badge: 'NEW',
     short: 'Advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss.',
     desc: 'Retatrutide is an advanced multi-pathway peptide designed to support appetite regulation, metabolic efficiency, and fat loss. Known for its powerful effects on weight management, it is one of the most effective compounds available for cutting phases. As a triple receptor agonist (GLP-1/GIP/Glucagon), it targets multiple fat-loss mechanisms simultaneously for superior metabolic outcomes.',
     benefits: ['Appetite regulation & control', 'Metabolic efficiency & fat loss', 'GLP-1/GIP/Glucagon triple agonism', 'Body composition optimization'],
@@ -86,7 +86,7 @@ const products = [
   },
   {
     id: 10, name: 'Tesamorelin', dose: '10mg', category: 'Metabolic', price: 110,
-    img: 'final_vial_11.png', badge: null,
+    badge: null,
     short: 'GHRH analogue that stimulates natural GH release, reduces visceral fat, and supports lean body composition.',
     desc: 'Tesamorelin is a synthetic GHRH analogue that stimulates the body\'s natural growth hormone production in a physiological pulsatile pattern. Particularly effective for visceral fat reduction and lean mass preservation, it is one of the most clinically-studied peptides for body composition optimization. Works synergistically with Retatrutide in the Nova Metabolic Stack.',
     benefits: ['Natural GH stimulation', 'Visceral fat reduction', 'Lean mass preservation', 'IGF-1 modulation & body composition'],
@@ -94,7 +94,7 @@ const products = [
   },
   {
     id: 11, name: 'BAC Water', dose: '10ml', category: 'Supplies', price: 20,
-    img: 'final_vial_1.png', badge: 'ESSENTIAL',
+    badge: 'ESSENTIAL',
     short: 'Bacteriostatic Water — required for peptide reconstitution.',
     desc: 'Bacteriostatic Water (BAC Water) is sterile water preserved with 0.9% benzyl alcohol. The benzyl alcohol acts as a bacteriostatic agent, inhibiting bacterial growth and allowing the vial to be safely punctured multiple times. Essential for reconstituting lyophilized peptide powders . Each 10ml vial is sufficient for multiple reconstitutions.',
     benefits: ['Peptide reconstitution medium', '0.9% benzyl alcohol preserved', 'Multi-dose compatible sterile vial', 'Required for all lyophilized peptides'],

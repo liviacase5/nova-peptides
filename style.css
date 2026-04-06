@@ -229,28 +229,6 @@ body {
   padding: 60px 24px;
   min-height: 500px;
 }
-.vial-showcase { position: relative; display: inline-block; }
-.hero-vial {
-  width: clamp(220px, 28vw, 380px);
-  filter: drop-shadow(0 20px 60px rgba(37, 99, 235, 0.3));
-  animation: vialFloat 4s ease-in-out infinite;
-  display: block;
-}
-.vial-glow {
-  position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
-  width: 200px; height: 60px;
-  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.4) 0%, transparent 70%);
-  filter: blur(20px);
-  animation: glowPulse 4s ease-in-out infinite;
-}
-@keyframes vialFloat {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50%       { transform: translateY(-16px) rotate(2deg); }
-}
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.5; transform: translateX(-50%) scaleX(1); }
-  50%       { opacity: 1; transform: translateX(-50%) scaleX(1.2); }
-}
 @keyframes float {
   0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
   10%  { opacity: 1; }
@@ -312,24 +290,6 @@ body {
   border-color: var(--border-glow);
   box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2), 0 0 0 1px rgba(37, 99, 235, 0.1);
 }
-.product-img-wrap {
-  background: linear-gradient(135deg, #0A0A0A 0%, #111827 100%);
-  padding: 32px 24px; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden; height: 220px;
-}
-.product-img-wrap::after {
-  content: '';
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 120px; height: 30px;
-  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
-  filter: blur(10px);
-}
-.product-img {
-  width: 130px; height: 160px; object-fit: contain;
-  transition: transform 0.4s ease;
-  filter: drop-shadow(0 8px 24px rgba(37, 99, 235, 0.2));
-}
-.product-card:hover .product-img { transform: scale(1.08) translateY(-4px); }
 .product-badge {
   position: absolute; top: 14px; right: 14px;
   background: linear-gradient(135deg, var(--blue), var(--blue-light));
@@ -487,18 +447,6 @@ body {
 .stat-number { font-family: var(--font-head); font-size: 2rem; font-weight: 900; color: var(--blue-light); display: block; }
 .stat-label { font-size: 0.78rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
 .about-visual { display: flex; flex-direction: column; gap: 24px; }
-.about-vial-wrap {
-  position: relative; text-align: center;
-  background: var(--dark-card); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 40px;
-}
-.about-vial { width: 160px; filter: drop-shadow(0 16px 40px rgba(37,99,235,0.3)); }
-.about-glow {
-  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-  width: 120px; height: 30px;
-  background: radial-gradient(ellipse, rgba(37,99,235,0.4) 0%, transparent 70%);
-  filter: blur(15px);
-}
 .about-values { display: flex; flex-direction: column; gap: 12px; }
 .value-item {
   display: flex; align-items: center; gap: 14px;
@@ -754,8 +702,6 @@ body {
   .form-row { grid-template-columns: 1fr; }
   .bundles-full-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
-  .product-img-wrap { height: 170px; }
-  .product-img { width: 100px; height: 120px; }
 }
 @media (max-width: 480px) {
   .hero-title { font-size: 2rem; }
