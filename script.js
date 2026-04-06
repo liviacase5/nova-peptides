@@ -324,6 +324,9 @@ function toggleFAQ(index) {
 function openOrderModal(productName, price, productId) {
   document.getElementById('modalProduct').textContent = productName;
   document.getElementById('modalPrice').textContent = '$' + price;
+  // Show these lines only when product details are available
+  document.getElementById('modalProductLine').style.display = productName ? 'block' : 'none';
+  document.getElementById('modalPriceLine').style.display = price ? 'block' : 'none';
   document.getElementById('orderModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }

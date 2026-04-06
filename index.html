@@ -59,8 +59,8 @@
  <div class="modal-box">
  <button class="modal-close" onclick="document.getElementById('orderModal').classList.remove('active'); document.body.style.overflow=''">&times;</button>
  <h2 class="modal-title">Place Your Order</h2>
- <p class="modal-subtitle">Item: <strong><span id="modalProduct"></span></strong></p>
- <p class="modal-price">Price: <span id="modalPrice"></span> <span class="modal-cad">CAD</span></p>
+ <p class="modal-subtitle" id="modalProductLine" style="display:none;">Item: <strong><span id="modalProduct"></span></strong></p>
+ <p class="modal-price" id="modalPriceLine" style="display:none;">Price: <span id="modalPrice"></span> <span class="modal-cad">CAD</span></p>
  <div class="modal-divider"></div>
  <p class="modal-payment-title">Accepted Payment Methods</p>
  <div class="modal-payment-options">
@@ -102,17 +102,18 @@
  <div class="hero-particles" id="heroParticles"></div>
  <div class="hero-molecular"></div>
  <div class="hero-content">
- <p class="hero-eyebrow">Pharmaceutical Grade · Canada</p>
- <h1 class="hero-title">Precision Peptides.<br>Verified Purity.<br><span class="glow-text">Real Results.</span></h1>
- <p class="hero-desc">Pharmaceutical-grade peptides designed for consistency, purity, and performance. Trusted across Canada.</p>
+ <p class="hero-eyebrow">Research Focused · Canada-Wide</p>
+ <h1 class="hero-title">Precision Peptides.<br>Verified Quality.<br><span class="glow-text">Research Focused.</span></h1>
+ <p class="hero-desc">Premium peptide compounds selected for consistency, purity, and professional presentation. Canada-wide shipping with discreet packaging and batch verification available.</p>
  <div class="hero-btns">
  <a href="#" class="btn-primary" onclick="showPage('shop'); setActive(document.getElementById('nav-shop'))" id="hero-browse-btn">Shop Compounds</a>
- <a href="#" class="btn-secondary" onclick="showPage('about'); setActive(document.getElementById('nav-about'))" id="hero-lab-btn">View Lab Results</a>
+ <a href="#" class="btn-secondary" onclick="showPage('about'); setActive(document.getElementById('nav-about'))" id="hero-lab-btn">Learn More</a>
  </div>
  <div class="hero-badges">
- <span class="badge">✓ Verified Purity</span>
- <span class="badge">✓ Lab-Tested Batches</span>
+ <span class="badge">✓ Batch Verification Available</span>
  <span class="badge">✓ Lyophilized Powder</span>
+ <span class="badge">✓ Discreet Shipping</span>
+ <span class="badge">✓ Canada-Wide Delivery</span>
  </div>
  </div>
   <div class="hero-visual">
@@ -196,45 +197,33 @@
  <div class="container">
  <div class="section-header">
  <p class="section-eyebrow">Why Nova</p>
- <h2 class="section-title">Verified Quality. <span class="glow-text">Every Batch.</span></h2>
- <p class="section-desc">Every product is tested for purity and consistency. Batch-specific lab reports are available for verification, ensuring transparency and confidence.</p>
+ <h2 class="section-title">Quality Standards <span class="glow-text">You Can Review</span></h2>
+ <p class="section-desc">Our compounds are selected for consistency, handling quality, and clear batch documentation. Where available, batch-specific verification can be provided to support transparency and confidence in your ordering process.</p>
  </div>
  <div class="why-grid">
  <div class="why-card">
- <div class="why-icon">✅</div>
- <h3 class="why-title">Verified Purity</h3>
- <p class="why-desc">Every compound meets 99%+ purity standards. Batch-specific lab reports are available upon request for full transparency and verification.</p>
- <div class="why-detail">99%+ Purity Standard</div>
+ <div class="why-icon">📋</div>
+ <h3 class="why-title">Batch Verification</h3>
+ <p class="why-desc">Documentation available for select batches to support transparency and confidence in your ordering process.</p>
+ <div class="why-detail">Available on Request</div>
  </div>
  <div class="why-card">
- <div class="why-icon">⚗️</div>
- <h3 class="why-title">Premium Formulations</h3>
- <p class="why-desc">We work exclusively with pharmaceutical-grade synthesis processes. Each batch is verified before it reaches you — no exceptions.</p>
- <div class="why-detail">Lab-Tested Every Batch</div>
+ <div class="why-icon">🧪</div>
+ <h3 class="why-title">Professional Presentation</h3>
+ <p class="why-desc">Lyophilized compounds, sealed vials, and organized product labeling — consistent quality in every order.</p>
+ <div class="why-detail">Quality-Controlled</div>
  </div>
  <div class="why-card">
- <div class="why-icon">🔄</div>
- <h3 class="why-title">Consistent Supply</h3>
- <p class="why-desc">Our catalog stays stocked. No waiting weeks for back-ordered compounds — reliable availability means your protocols never get interrupted.</p>
- <div class="why-detail">In-Stock &amp; Ready</div>
- </div>
- <div class="why-card">
- <div class="why-icon">🇨🇦</div>
- <h3 class="why-title">Fast Canadian Shipping</h3>
- <p class="why-desc">Orders processed within 24 hours. Shipped discreetly across Canada — tracked delivery in 3–7 business days with no product names on the outer packaging.</p>
+ <div class="why-icon">📦</div>
+ <h3 class="why-title">Reliable Fulfillment</h3>
+ <p class="why-desc">Orders processed within 1 business day after payment confirmation. Fast, tracked Canada-wide delivery.</p>
  <div class="why-detail">3–7 Days · All Provinces</div>
  </div>
  <div class="why-card">
  <div class="why-icon">🛡️</div>
- <h3 class="why-title">Privacy First</h3>
- <p class="why-desc">Your data and order details are handled with complete confidentiality. We never share customer information with any third parties — ever.</p>
- <div class="why-detail">Full Customer Privacy</div>
- </div>
- <div class="why-card">
- <div class="why-icon">🤝</div>
- <h3 class="why-title">Responsive Support</h3>
- <p class="why-desc">Questions about your order, payment, or products? Our team responds within 24 hours on business days. Real support from real people.</p>
- <div class="why-detail">24h Response Time</div>
+ <h3 class="why-title">Private Ordering</h3>
+ <p class="why-desc">Discreet packaging with no product names on the outer label. Confidential order handling — your privacy is respected.</p>
+ <div class="why-detail">Discreet & Confidential</div>
  </div>
  </div>
  </div>
@@ -288,7 +277,7 @@
  <div class="reviews-grid">
  <div class="review-card">
  <div class="review-stars">★★★★★</div>
- <p class="review-text">"Noticeable difference within the first couple of weeks. Everything arrived fast and packaged properly — nothing to identify what was inside. Quality feels legit compared to what I've tried before."</p>
+ <p class="review-text">"Ordering was straightforward, communication was clear, and shipping was fast. Everything arrived exactly as expected."</p>
  <div class="review-author">
  <div class="review-avatar">RT</div>
  <div>
@@ -299,7 +288,7 @@
  </div>
  <div class="review-card">
  <div class="review-stars">★★★★★</div>
- <p class="review-text">"Quality feels consistent batch to batch. Definitely better than what I've tried from other sources. Ordering was easy and the crypto payment went through without any issues."</p>
+ <p class="review-text">"Everything arrived well packaged and discreetly shipped. The crypto payment process was simple and confirmation came quickly."</p>
  <div class="review-author">
  <div class="review-avatar">MK</div>
  <div>
@@ -310,7 +299,7 @@
  </div>
  <div class="review-card">
  <div class="review-stars">★★★★★</div>
- <p class="review-text">"Grabbed the Performance Stack — solid value for what you're getting. Arrived in 4 days, packaging was clean and discreet. Will be ordering again when I'm done with this cycle."</p>
+ <p class="review-text">"Process was smooth from payment confirmation to delivery. Packaging was clean and discreet — nothing on the outside to identify the contents."</p>
  <div class="review-author">
  <div class="review-avatar">JL</div>
  <div>
@@ -321,7 +310,7 @@
  </div>
  <div class="review-card">
  <div class="review-stars">★★★★★</div>
- <p class="review-text">"Tried the Metabolic Stack — felt results within the first week. The E-transfer was easy, got a confirmation fast, and it shipped the next day. Exactly what I was looking for."</p>
+ <p class="review-text">"Professional presentation and quick support when I had questions. The E-Transfer was easy and the order shipped the next business day."</p>
  <div class="review-author">
  <div class="review-avatar">SB</div>
  <div>
@@ -636,7 +625,7 @@
  <ul class="info-list">
  <li>🇨🇦 <strong>Canada-wide shipping</strong> — all provinces and territories</li>
  <li>📦 <strong>Discreet packaging</strong> &amp; tracked delivery — no product names on label</li>
- <li>⚡ Orders processed within <strong>24 hours</strong> of payment confirmation</li>
+ <li>⚡ Orders processed within <strong>1 business day</strong> after payment confirmation</li>
  <li>Delivery in <strong>3–7 business days</strong> after dispatch</li>
  <li>Tracking number sent via email once shipped</li>
  <li>Weekend/holiday orders processed next business day</li>
@@ -692,7 +681,7 @@
  <div class="t-line"></div>
  <div class="t-step"><div class="t-dot">5</div><div class="t-label">Delivered 🇨🇦</div></div>
  </div>
- <p class="timeline-note">⏱ Total estimated time: 1–2 days processing + 3–7 days shipping</p>
+ <p class="timeline-note">⏱ Total estimated time: 1 business day processing + 3–7 business days shipping</p>
  </div>
  </div>
  </section>
@@ -718,7 +707,7 @@
  <span class="contact-icon">📧</span>
  <div>
  <p class="contact-label">Email</p>
- <p class="contact-value">info@novapremiumeptides.ca</p>
+ <p class="contact-value">info@novapremiumpeptides.ca</p>
  </div>
  </div>
  <div class="contact-detail">
@@ -817,7 +806,7 @@
   </div>
   </div>
  <p class="footer-tagline">Premium Peptides · Canada</p>
- <p class="footer-desc">Premium peptides for serious results. Precision. Purity. Performance. Lyophilized, verified, and discreetly shipped across Canada.</p>
+ <p class="footer-desc">Precision peptide compounds, consistently formulated and discreetly shipped across Canada. Batch verification available.</p>
  
  </div>
  <div class="footer-col">
