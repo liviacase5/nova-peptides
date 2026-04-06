@@ -615,7 +615,7 @@ body {
   padding: 72px 0 40px;
 }
 .footer-grid {
-  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px;
   margin-bottom: 48px;
 }
 .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
