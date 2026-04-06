@@ -241,9 +241,8 @@ function renderProducts(containerId, limit) {
   container.innerHTML = list.map(p => `
     <div class="product-card" onclick="openOrderModal('${p.name} (${p.dose})', '${p.price}', ${p.id})">
       <div class="product-body" style="padding-top: 24px;">
-        <p class="product-category" style="display: flex; justify-content: space-between; align-items: center;">
+        <p class="product-category">
           ${p.category}
-          ${p.badge ? `<span style="font-size: 0.65rem; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); color: var(--blue-light); padding: 2px 8px; border-radius: 4px; font-weight: 700; letter-spacing: 0.5px;">${p.badge}</span>` : ''}
         </p>
         <h3 class="product-name">${p.name}</h3>
         <p class="product-dose">Lyophilized Powder · ${p.dose}</p>
